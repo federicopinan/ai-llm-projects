@@ -1,0 +1,27 @@
+# Optional ChromaDB server for the RAG Pipeline for Private Notes PoC.
+#
+# The PoC works out of the box in embedded mode (no service required).
+# Use this docker-compose only if you want to run ChromaDB as a separate
+# server, e.g. to share the index across multiple processes.
+#
+# Usage:
+#   docker compose up -d
+#   export CHROMA_URL=http://localhost:8000    # in your shell or .env
+#   python src/ingest.py
+#   python src/query.py "What are the benefits of local-first AI?"
+#
+# To stop and remove the container:
+#   docker compose down
+
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: rag-notes-chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/.chroma
+    restart: unless-stopped
+
+volumes:
+  chroma_data:

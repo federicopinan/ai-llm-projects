@@ -30,27 +30,29 @@ The goal is to turn notes, documents, ideas, and research into a structured seco
 
 ---
 
-### 2. Personal AI Assistant
+### 2. Context-Aware Personal AI Assistant
 
-A personal assistant system designed to help with daily tasks, planning, research, reminders, and operational workflows.
+A workflow-based AI assistant PoC designed to support daily planning, research summarization, task breakdown, and decision support using reusable prompt templates and structured context.
 
-The goal is to move from simple prompting to repeatable AI-assisted routines that can support productivity, decision-making, and personal execution.
+The goal is to make the prompt layer itself a versionable artifact: workflows are plain markdown files that get rendered with user context into a structured prompt, optionally forwarded to a local LLM. The default mode is prompt-only, no autonomous actions, and every output is meant for human review.
 
 **Core ideas:**
 
-- Task support
-- Research assistant
-- Daily planning
-- Workflow automation
-- Personal productivity system
+- Reusable markdown prompt workflows
+- Context injection via CLI flags
+- Local-first, prompt-only by default
+- Optional Ollama backend for local LLM execution
+- Human-in-the-loop by design
 
-**Possible stack:**
+**Stack:**
 
-- LLM APIs
-- Automation tools
-- Local or hosted assistant interface
-- Custom prompts
-- Personal workflows
+- Python 3.10+ CLI
+- Markdown workflows
+- python-dotenv
+- requests
+- Ollama (optional)
+
+Path: `projects/personal-ai-assistant`
 
 ---
 

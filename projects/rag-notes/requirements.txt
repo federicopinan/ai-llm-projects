@@ -1,0 +1,6 @@
+# Runtime dependencies for the RAG Pipeline for Private Notes PoC.
+# Tested with Python 3.10+. The Ollama integration uses urllib from the
+# standard library, so no HTTP client library is required.
+
+chromadb>=0.5,<1.0
+python-dotenv>=1.0

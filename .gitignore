@@ -111,3 +111,29 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Python (added for ai-llm-projects)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.python-version
+
+# Local environment files
+.env
+.env.*
+!.env.example
+*.env
+
+# ChromaDB local vector store (created at runtime by rag-notes)
+chroma_db/
+
+# Private notes — never commit real personal notes
+data/private_notes/
+
+# OS metadata
+.DS_Store
+Thumbs.db
